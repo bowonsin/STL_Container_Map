@@ -49,6 +49,9 @@ int main(void)
 {
 	Transform Info;
 
+	list<Object*> Check;
+
+
 	Info.Position.x = 10;
 	Info.Position.y = 20;
 	Info.Position.z = 30; 
@@ -57,12 +60,14 @@ int main(void)
 
 	map<string, list<Object*>>::iterator iter = Objects.find("Player");//** find 라는 함수를 이용해서 iterator 를 가져온다.
 
-	for (auto iter1 = iter->second.begin(); iter1 != iter->second.end(); ++iter)
+	
+	for (auto iter1 = iter->second.begin(); iter1 != iter->second.end(); ++iter1)
 	{
 		cout << (*iter1)->Info.Position.x << endl;
 		cout << (*iter1)->Info.Position.y << endl;
 		cout << (*iter1)->Info.Position.z << endl;
 	}
+
 	//Initialize();
 	//cout << Objects["Player"]->Info.Position.x << endl;
 	//cout << Objects["Player"]->Info.Position.y << endl;
